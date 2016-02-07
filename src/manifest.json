@@ -1,0 +1,26 @@
+{
+  "background": {
+    "scripts": [
+      "createContextMenu.js"
+    ]
+  },
+  "manifest_version": 2,
+  "minimum_chrome_version": "45",
+  "name": "Context menu frame problem demo",
+  "short_name": "Context menu frame problem demo",
+  "description": "Demonstration of the frame mouse event problem I'm having",
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "run_at": "document_end",
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["logMouseMove.js"]
+    }
+  ],
+  "permissions": [
+    "http://*/*",
+    "https://*/*",
+    "contextMenus"
+  ],
+  "version": "0.0.1"
+}
